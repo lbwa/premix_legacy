@@ -24,6 +24,26 @@ A [TypedArray][mdn-typed-array] object describes an array-like view of an underl
 
 If control over byte order is needed, you may need to use _DataView_ and take care of [endian, endianness, byte-order](https://developer.mozilla.org/en-US/docs/Glossary/Endianness).
 
+## Usage
+
+- convert a string data type to an arrayBuffer
+
+```ts
+import { stringToBuffer } from '@premix/buffer'
+
+stringToBuffer('a') // return a ArrayBuffer<byteLength=2>
+```
+
+- convert an arrayBuffer to a string
+
+```ts
+import { bufferToString } from '@premix/buffer'
+
+const view = new Uint16Array(new ArrayBuffer(2))
+view[0] = 'a'.charCodeAt(0)
+bufferToString(view.buffer) // return a string 'a'
+```
+
 ## Further readings
 
 - [MDN - JavaScript data types and data structures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures)
