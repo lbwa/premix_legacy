@@ -4,7 +4,7 @@ This package is used to help people to handle buffer easily.
 
 ## Between ArrayBuffer and Buffer
 
-[ArrayBuffer][mdn-array-buffer] object is used to represent a generic, **fixed-length** _raw binary data buffer_. [Buffer][nodejs-buffer] object in node.js is equivalent to [TypedArray][mdn-typed-array], not ArrayBuffer object.
+[ArrayBuffer][mdn-array-buffer] object is used to represent a generic, **fixed-length** _raw binary data buffer_. [Buffer][nodejs-buffer] object in node.js is equivalent to _Uint8Array_ (A kind of [TypedArray][mdn-typed-array])<sup>[source](https://nodejs.org/dist/latest/docs/api/buffer.html#buffer_buffers_and_typedarray)</sup>, not ArrayBuffer object.
 
 A [TypedArray][mdn-typed-array] object describes an array-like view of an underlying binary data buffer.
 
@@ -19,6 +19,10 @@ A [TypedArray][mdn-typed-array] object describes an array-like view of an underl
 1. The Number type is a double-precision **64-bit** binary format IEEE 754 value (numbers between -(2<sup>53</sup> -1) and 2<sup>53</sup> -1).
 
 1. The String type is a set of "elements" of **16-bit** unsigned integer values
+
+## Byte order
+
+If control over byte order is needed, you may need to use _DataView_ and take care of [endian, endianness, byte-order](https://developer.mozilla.org/en-US/docs/Glossary/Endianness).
 
 ## Further readings
 
