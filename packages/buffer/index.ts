@@ -2,8 +2,7 @@
  * @param buffer buffer from string
  */
 export function bufferToString(buffer: ArrayBuffer): string {
-  const bufferView = new Uint16Array(buffer)
-  return String.fromCharCode.apply(String, bufferView)
+  return String.fromCharCode(...new Uint16Array(buffer))
 }
 
 /**
