@@ -1,9 +1,29 @@
 {
-  "name": "root",
+  "name": "premix",
+  "version": "0.0.1",
   "private": true,
   "workspaces": [
     "packages/*"
   ],
+  "description": "JavaScript utilities",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"no test\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lbwa/premix.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "utilities"
+  ],
+  "author": "Bowen <vnode@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lbwa/premix/issues"
+  },
+  "homepage": "https://github.com/lbwa/premix#readme",
   "devDependencies": {
     "lerna": "^3.19.0",
     "typescript": "^3.7.3"
