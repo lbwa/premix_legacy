@@ -1,0 +1,41 @@
+{
+  "name": "@premix/buffer",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Handle ArrayBuffer easily",
+  "keywords": [
+    "ArrayBuffer",
+    "buffer",
+    "binary",
+    "DataView",
+    "TypedArray"
+  ],
+  "author": "Bowen <vnode@outlook.com>",
+  "homepage": "https://github.com/lbwa/premix/tree/master/packages/buffer#readme",
+  "license": "MIT",
+  "main": "lib/buffer.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lbwa/premix.git"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/lbwa/premix/issues"
+  },
+  "devDependencies": {
+    "typescript": "^3.7.4"
+  }
+}

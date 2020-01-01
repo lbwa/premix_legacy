@@ -1,0 +1,30 @@
+{
+  "name": "premix",
+  "version": "0.0.1",
+  "description": "All internal modules of premix",
+  "keywords": [
+    "premix"
+  ],
+  "author": "lbwa <mr_lbw@outlook.com>",
+  "homepage": "https://github.com/lbwa/premix/tree/master/packages/premix#readme",
+  "license": "MIT",
+  "main": "lib/premix.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lbwa/premix.git"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/lbwa/premix/issues"
+  }
+}
