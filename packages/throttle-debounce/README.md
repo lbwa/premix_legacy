@@ -1,11 +1,7 @@
-# `throttle-debounce`
+<h1 align="center">@premix/throttle-debounce</h1>
 
-> TODO: description
+> throttle and debounce functions.
 
-## Usage
+## License
 
-```
-const throttleDebounce = require('throttle-debounce');
-
-// TODO: DEMONSTRATE API
-```
+MIT © [Bowen Liu](https://github.com/lbwa)

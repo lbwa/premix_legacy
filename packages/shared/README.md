@@ -1,11 +1,7 @@
-# `shared`
+<h1 align="center">@premix/shared</h1>
 
-> TODO: description
+> The internal helper functions of [premix](https://github.com/lbwa/premix).
 
-## Usage
+## License
 
-```
-const shared = require('shared');
-
-// TODO: DEMONSTRATE API
-```
+MIT © [Bowen Liu](https://github.com/lbwa)

@@ -1,7 +1,7 @@
 {
   "name": "@premix/shared",
   "version": "0.0.1",
-  "description": "premix internal helper functions",
+  "description": "The internal helper functions of premix",
   "keywords": [
     "premix",
     "shared",

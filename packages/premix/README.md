@@ -1,11 +1,7 @@
-# `premix`
+<h1 align="center">premix</h1>
 
-> TODO: description
+> All internal modules of [premix](https://github.com/lbwa/premix).
 
-## Usage
+## License
 
-```
-const premix = require('premix');
-
-// TODO: DEMONSTRATE API
-```
+MIT © [Bowen Liu](https://github.com/lbwa)
