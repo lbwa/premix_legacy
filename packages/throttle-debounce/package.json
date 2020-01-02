@@ -1,6 +1,6 @@
 {
   "name": "@premix/throttle-debounce",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "throttle and debounce functions",
   "keywords": [
     "premix",
@@ -35,7 +35,7 @@
     "url": "https://github.com/lbwa/premix/issues"
   },
   "dependencies": {
-    "@premix/shared": "^0.0.1"
+    "@premix/shared": "^0.1.0"
   },
   "devDependencies": {
     "typescript": "^3.7.4"
