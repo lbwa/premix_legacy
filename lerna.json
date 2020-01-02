@@ -15,7 +15,7 @@
     },
     "bootstrap": {
       "npmClientArgs": [
-        "--no-package-lock"
+        "--no-lockfile"
       ]
     }
   }
