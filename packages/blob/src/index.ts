@@ -6,15 +6,26 @@
 export function base64ToBlob(url: string, options?: BlobPropertyBag) {
   const headerWithData = url.split(',')
   const mineType = (headerWithData[0].match(/:(.*?);/) || [])[1]
+  // convert string to binary string
+  // binary string is not to represent characters, but binary data.
+  // https://developer.mozilla.org/en-US/docs/Web/API/DOMString/Binary
   const binaryString = window.atob(headerWithData[1])
 
   if (!mineType) throw new TypeError('[base64ToBlob]: invalid mine type.')
 
   let i = binaryString.length
-  // We use Uint8Array bufferView to store every bytes data, eg. the color of images
-  const uint8View = new Uint8Array(i)
+  // We use Uint8Array bufferView to store every bytes data because 1 byte is
+  // the smallest addressable unit of memory, eg. the color of images.
+  const uint8View = new Uint8Array(
+    i // The size of the binary string data represented is twice as big as it
+    // would be in normal binary format, however this will not be visible to
+    // the final user, since the length of JavaScript strings is calculated
+    // using two bytes as the unit.
+    // so we just use binaryString.length size memory, not double size
+  )
 
-  // convert every string character to Unicode value
+  // convert each binary string code unit to Unicode value.
+  // memory usage will reduce 50%.
   while (i--) {
     uint8View[i] = binaryString.charCodeAt(i)
   }
