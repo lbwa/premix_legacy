@@ -1,4 +1,4 @@
-import { base64ToBlob, blobToBase64 } from '../src'
+import { base64ToBlob, blobToBase64, downloadBlob } from '../src'
 
 describe('@premix/blob: blob converter', () => {
   it('should convert Blob object to base64 string', done => {
@@ -27,5 +27,38 @@ describe('@premix/blob: blob converter', () => {
     expect(() => {
       base64ToBlob(base64String)
     }).toThrowError('invalid mine type')
+  })
+
+  // https://stackoverflow.com/a/55022278/11708999
+  it('Should convert blob to a downloadable file', () => {
+    window.URL.createObjectURL = jest.fn()
+    window.URL.revokeObjectURL = jest.fn()
+    const blobOptions = {
+      type: 'image/png'
+    }
+    const filename = ''
+    const blob = new Blob(['1'], blobOptions)
+    const $ = document.createElement.bind(document)
+    const onClick = jest.fn()
+    let ele: HTMLAnchorElement = $('a')
+    jest
+      .spyOn(document, 'createElement')
+      .mockImplementation(
+        (tagName: string, options?: ElementCreationOptions) => {
+          ele = $(tagName, options) as HTMLAnchorElement
+          ele.click = onClick
+          return ele
+        }
+      )
+
+    downloadBlob(blob, filename)
+
+    expect(window.URL.createObjectURL).toHaveBeenCalledTimes(1)
+    expect(window.URL.revokeObjectURL).toHaveBeenCalledTimes(1)
+
+    expect(ele.download).toEqual('untitled')
+    expect(ele.href.length).toBeGreaterThan(0)
+    expect(ele.style.display).toEqual('none')
+    expect(ele.click).toHaveBeenCalledTimes(1)
   })
 })
