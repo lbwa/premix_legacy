@@ -6,7 +6,7 @@
     "blob",
     "base64"
   ],
-  "author": "lbwa <mr_lbw@outlook.com>",
+  "author": "Bowen <mr_lbw@outlook.com>",
   "homepage": "https://github.com/lbwa/premix/tree/master/packages/blob#readme",
   "license": "MIT",
   "main": "lib/index.js",
@@ -28,12 +28,41 @@
   "scripts": {
     "build": "npm run clean && tsc",
     "clean": "rm -rf lib/*",
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "test": "jest --coverage"
   },
   "bugs": {
     "url": "https://github.com/lbwa/premix/issues"
   },
+  "jest": {
+    "coverageDirectory": "coverage",
+    "coveragePathIgnorePatterns": [
+      "\\\\node_modules\\\\"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "jsx",
+      "ts",
+      "tsx",
+      "node"
+    ],
+    "preset": "ts-jest",
+    "roots": [
+      "<rootDir>"
+    ],
+    "testMatch": [
+      "**/__tests__/**/*.[jt]s?(x)",
+      "**/?(*.)+(spec|test).[tj]s?(x)"
+    ],
+    "testPathIgnorePatterns": [
+      "\\\\node_modules\\\\",
+      "\\\\lib\\\\"
+    ]
+  },
   "devDependencies": {
+    "@types/jest": "^25.1.2",
+    "jest": "^25.1.0",
+    "ts-jest": "^25.2.0",
     "typescript": "^3.7.5"
   }
 }

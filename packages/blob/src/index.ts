@@ -38,11 +38,11 @@ export function base64ToBlob(url: string, options?: BlobPropertyBag) {
  * @param blob target Blob or File object
  */
 export function blobToBase64(blob: Blob) {
-  return new Promise<FileReader['result']>((resolve, reject) => {
+  return new Promise<string>((resolve, reject) => {
     const reader = new FileReader()
     reader.readAsDataURL(blob)
     reader.onerror = reject
-    reader.onload = () => resolve(reader.result)
+    reader.onload = () => resolve(reader.result as string)
   })
 }
 
